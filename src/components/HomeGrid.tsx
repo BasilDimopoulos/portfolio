@@ -1,4 +1,5 @@
 import React from "react";
+//@ts-ignore
 import anime from "animejs";
 import { LandingText } from "./LandingText";
 
@@ -69,9 +70,10 @@ export default class HomeGrid extends React.Component {
                 <p className="text-white uppercase text-xl font-bold mt-3">
                   Basil Brush
                 </p>
+                
                 <p className="text-gray-200 text-xl">
                   Basil Brush is a fictional red fox, best known for his
-                  appearances on daytime British children's television.
+                  appearances on daytime British television.
                 </p>
               </div>
 
@@ -106,7 +108,9 @@ export default class HomeGrid extends React.Component {
   handleOnClick = (index: any) => {
     count = count + 1;
     toggled = true;
+    //@ts-ignore
     this.heroText.current.style.opacity = "0";
+    //@ts-ignore
     this.secondPage.current.style.display = "block";
     anime({
       targets: ".tile",
