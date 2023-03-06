@@ -66,13 +66,13 @@ export default class HomeGrid extends React.Component {
             </h2>
             <HorizontallyScrollingDiv />
             <div className="pl-24 pb-24">
-              <h3 className="text-white uppercase text-5xl max-w-4xl tracking-widest mt-10">
+              <h3 className="text-white uppercase text-5xl max-w-4xl tracking-widest mt-20">
                 In reality I am just a humble engineer
               </h3>
               <p className="text-gray-200 text-xl mt-3">
                 Here are some links for you to get to know me better
               </p>
-              <div className="flex pt-2">
+              <div className="flex pt-3">
                 <svg onClick={ () => window.open(`https://www.linkedin.com/in/basil-dimopoulos-6508351b0/`, "_blank")}
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-8 fill-white cursor-pointer"
