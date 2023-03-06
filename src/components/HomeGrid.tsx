@@ -1,7 +1,7 @@
 import React from "react";
 //@ts-ignore
 import anime from "animejs";
-import { LandingText } from "./LandingText";
+import HorizontallyScrollingDiv from "./HorizontallyScrollingDiv";
 
 const colors = ["rgb(229, 57, 53)", "rgb(253,216,53)", "rgb(244,81,30"];
 
@@ -60,43 +60,26 @@ export default class HomeGrid extends React.Component {
           ref={this.secondPage as React.RefObject<HTMLDivElement>}
           className="hidden absolute"
         >
-          <div className="p-24">
-            <h2 className="text-white text-7xl uppercase max-w-4xl">
+          <div className="w-screen">
+            <h2 className="text-white text-7xl uppercase max-w-5xl pl-24 pt-24">
               But maybe you confused me with
             </h2>
-            <div className="flex mt-14 space-x-16">
-              <div className="max-w-[400px]">
-                <img src="/images/image-8.jpg" className="w-[400px]"></img>
-                <p className="text-white uppercase text-xl font-bold mt-3">
-                  Basil Brush
-                </p>
-                
-                <p className="text-gray-200 text-xl">
-                  Basil Brush is a fictional red fox, best known for his
-                  appearances on daytime British television.
-                </p>
-              </div>
-
-              <div className="max-w-[400px]">
-                <img src="/images/image-9.jpg" className="w-[400px]"></img>
-                <p className="text-white uppercase text-xl font-bold mt-3">
-                  Basil Fawlty
-                </p>
-                <p className="text-gray-200 text-xl">
-                  Basil Fawlty is the main character of the 1970s British sitcom
-                  Fawlty Towers, played by John Cleese.
-                </p>
-              </div>
-
-              <div className="max-w-[400px]">
-                <img src="/images/image-10.jpg" className="w-[400px]"></img>
-                <p className="text-white uppercase text-xl font-bold mt-3">
-                  Basil
-                </p>
-                <p className="text-gray-200 text-xl">
-                  Basil. It is a tender plant, and is used in cuisines
-                  worldwide.
-                </p>
+            <HorizontallyScrollingDiv />
+            <div className="pl-24 pb-24">
+              <h3 className="text-white uppercase text-5xl max-w-4xl tracking-widest mt-10">
+                In reality I am just a humble engineer
+              </h3>
+              <p className="text-gray-200 text-xl mt-3">
+                Here are some links for you to get to know me better
+              </p>
+              <div className="flex pt-2">
+                <svg onClick={ () => window.open(`https://www.linkedin.com/in/basil-dimopoulos-6508351b0/`, "_blank")}
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 fill-white cursor-pointer"
+                  viewBox="0 5 1036 990"
+                >
+                  <path d="M0 120c0-33.334 11.667-60.834 35-82.5C58.333 15.833 88.667 5 126 5c36.667 0 66.333 10.666 89 32 23.333 22 35 50.666 35 86 0 32-11.333 58.666-34 80-23.333 22-54 33-92 33h-1c-36.667 0-66.333-11-89-33S0 153.333 0 120zm13 875V327h222v668H13zm345 0h222V622c0-23.334 2.667-41.334 8-54 9.333-22.667 23.5-41.834 42.5-57.5 19-15.667 42.833-23.5 71.5-23.5 74.667 0 112 50.333 112 151v357h222V612c0-98.667-23.333-173.5-70-224.5S857.667 311 781 311c-86 0-153 37-201 111v2h-1l1-2v-95H358c1.333 21.333 2 87.666 2 199 0 111.333-.667 267.666-2 469z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -112,6 +95,11 @@ export default class HomeGrid extends React.Component {
     this.heroText.current.style.opacity = "0";
     //@ts-ignore
     this.secondPage.current.style.display = "block";
+    setTimeout(() => {
+      //@ts-ignore
+      this.secondPage.current.style.zIndex = "50";
+    }, 1300);
+
     anime({
       targets: ".tile",
       opacity: toggled ? 0 : 1,
