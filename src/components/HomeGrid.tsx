@@ -28,11 +28,11 @@ export default class HomeGrid extends React.Component {
           className="absolute z-20 md:pl-28 pl-5 md:pr-28 pr-5 w-full pointer-events-none transition"
           id="title"
         >
-          <h1 className="text-white text-6xl md:text-9xl uppercase mt-56 md:max-w-6xl leading-[0.9]">
+          <h1 className="text-white text-5xl md:text-9xl uppercase mt-72 md:max-w-6xl leading-[0.9]">
             Hello <br></br>My Name is Basil
           </h1>
           <div className="pl-1">
-            <div className="w-full h-1 bg-white mt-48"></div>
+            <div className="w-full h-1 bg-white md:mt-48 mt-56"></div>
             <div className="flex justify-between">
               <p className="text-white font-bold text-lg uppercase mt-6 leading-5">
                 Last Updated<br></br> March 2023
@@ -43,7 +43,7 @@ export default class HomeGrid extends React.Component {
                 viewBox="0 0 24 24"
                 strokeWidth={0.5}
                 stroke="currentColor"
-                className="w-20 h-20 text-slate-300 mt-1"
+                className="hidden md:block w-20 h-20 text-slate-300 mt-1"
               >
                 <path
                   strokeLinecap="round"
@@ -61,19 +61,25 @@ export default class HomeGrid extends React.Component {
           className="hidden absolute"
         >
           <div className="w-screen">
-            <h2 className="text-white text-7xl uppercase max-w-5xl pl-24 pt-24">
+            <h2 className="text-white text-4xl text-[32px] md:text-7xl uppercase md:max-w-5xl md:pl-24 md:pt-24 pl-5 pt-12">
               But maybe you confused me with
             </h2>
             <HorizontallyScrollingDiv />
-            <div className="pl-24 pb-24">
-              <h3 className="text-white uppercase text-5xl max-w-4xl tracking-widest mt-20">
+            <div className="md:pl-24 md:pb-24 pl-5 pr-10">
+              <h3 className="text-white uppercase text-2xl text-[32px] md:text-5xl max-w-4xl tracking-widest md:mt-20 mt-12">
                 In reality I am just a humble engineer
               </h3>
-              <p className="text-gray-200 text-xl mt-3">
+              <p className="text-gray-200 md:text-xl text-lg md:mt-3 mt-1">
                 Here are some links for you to get to know me better
               </p>
               <div className="flex pt-3">
-                <svg onClick={ () => window.open(`https://www.linkedin.com/in/basil-dimopoulos-6508351b0/`, "_blank")}
+                <svg
+                  onClick={() =>
+                    window.open(
+                      `https://www.linkedin.com/in/basil-dimopoulos-6508351b0/`,
+                      "_blank"
+                    )
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-8 fill-white cursor-pointer"
                   viewBox="0 5 1036 990"
