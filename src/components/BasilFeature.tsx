@@ -2,6 +2,7 @@ export default function BasilFeature() {
   return (
     <div className="flex flex-col max-w-md">
       <div className="flex flex-col justify-center items-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/image-8.jpg"
           alt="basil-brush"
