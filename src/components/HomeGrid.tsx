@@ -26,18 +26,18 @@ export default class HomeGrid extends React.Component {
       >
         <div
           ref={this.heroText as React.RefObject<HTMLDivElement>}
-          className="absolute z-20 w-full h-screen transition flex flex-col justify-center items-center"
+          className="absolute z-20 w-full h-screen transition flex flex-col justify-center md:items-center"
           id="title"
         >
-          <div className="bg-black md:px-40 flex flex-col items-center justify-center pt-24 pb-24 rounded">
-            <h1 className="text-white text-5xl md:text-[150px] uppercase md:max-w-6xl leading-[0.9] font-gilroy font-black">
+          <div className="bg-black md:px-40 flex flex-col md:items-center justify-center md:pt-24 pt-16 pb-24 rounded pl-10 mx-4 md:mx-0">
+            <h1 className="text-white text-7xl md:text-[150px] uppercase md:max-w-6xl leading-[0.9] font-gilroy font-black">
               Basil?
             </h1>
-            <p className="text-white mt-5 mb-8 font-gilroy text-3xl text-[1.7rem] font-medium max-w-2xl text-center">
+            <p className="text-white mt-5 mb-8 font-gilroy text-2xl md:text-3xl md:text-[1.7rem] font-medium md:max-w-2xl max-w-lg md:text-center">
               Are you here for Basil? Well of course you are! Look at the URL
               for goodness sake!
             </p>
-            <button onClick={()=> this.handleOnClick(Math.floor(((document.body.clientWidth / this.size))) * document.body.clientHeight/this.size / 2) } className="text-white uppercase text-xl bg-blue-500 hover:bg-blue-700 font-bold py-3 px-4 rounded font-gilroy bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 background-animate transition ease-in-out delay-150 hover:scale-110">Take the journey</button>
+            <button onClick={()=> this.handleOnClick(Math.floor(((document.body.clientWidth / this.size))) * document.body.clientHeight/this.size / 2) } className="text-white w-64 uppercase text-xl bg-blue-500 hover:bg-blue-700 font-bold py-3 px-4 rounded font-gilroy bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 background-animate transition ease-in-out delay-150 hover:scale-110">Take the journey</button>
           </div>
         </div>
 
