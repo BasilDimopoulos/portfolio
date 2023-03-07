@@ -15,6 +15,7 @@ export default class HomeGrid extends React.Component {
   private wrapper: any;
   private heroText = React.createRef();
   private secondPage = React.createRef();
+  private size = 50;
 
   render() {
     return (
@@ -25,33 +26,18 @@ export default class HomeGrid extends React.Component {
       >
         <div
           ref={this.heroText as React.RefObject<HTMLDivElement>}
-          className="absolute z-20 md:pl-28 pl-5 md:pr-28 pr-5 w-full pointer-events-none transition"
+          className="absolute z-20 w-full h-screen transition flex flex-col justify-center items-center"
           id="title"
         >
-          <h1 className="text-white text-5xl md:text-9xl uppercase mt-72 md:max-w-6xl leading-[0.9]">
-            Hello <br></br>My Name is Basil
-          </h1>
-          <div className="pl-1">
-            <div className="w-full h-1 bg-white md:mt-48 mt-56"></div>
-            <div className="flex justify-between">
-              <p className="text-white font-bold text-lg uppercase mt-6 leading-5">
-                Last Updated<br></br> March 2023
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={0.5}
-                stroke="currentColor"
-                className="hidden md:block w-20 h-20 text-slate-300 mt-1"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
-                />
-              </svg>
-            </div>
+          <div className="bg-black md:px-40 flex flex-col items-center justify-center pt-24 pb-24 rounded">
+            <h1 className="text-white text-5xl md:text-[150px] uppercase md:max-w-6xl leading-[0.9] font-gilroy font-black">
+              Basil?
+            </h1>
+            <p className="text-white mt-5 mb-8 font-gilroy text-3xl text-[1.7rem] font-medium max-w-2xl text-center">
+              Are you here for Basil? Well of course you are! Look at the URL
+              for goodness sake!
+            </p>
+            <button onClick={()=> this.handleOnClick(Math.floor(((document.body.clientWidth / this.size))) * document.body.clientHeight/this.size / 2) } className="text-white uppercase text-xl bg-blue-500 hover:bg-blue-700 font-bold py-3 px-4 rounded font-gilroy bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 background-animate transition ease-in-out delay-150 hover:scale-110">Take the journey</button>
           </div>
         </div>
 
@@ -61,12 +47,12 @@ export default class HomeGrid extends React.Component {
           className="hidden absolute"
         >
           <div className="w-screen">
-            <h2 className="text-white text-4xl text-[32px] md:text-7xl uppercase md:max-w-5xl md:pl-24 md:pt-24 pl-5 pt-12">
+            <h2 className="text-white text-4xl text-[32px] md:text-7xl uppercase md:max-w-5xl md:pl-24 md:pt-24 pl-5 pt-12 font-gilroy font-black">
               But maybe you confused me with
             </h2>
             <HorizontallyScrollingDiv />
             <div className="md:pl-24 md:pb-24 pl-5 pr-10">
-              <h3 className="text-white uppercase text-2xl text-[32px] md:text-5xl max-w-4xl tracking-widest md:mt-20 mt-12">
+              <h3 className="text-white uppercase text-2xl text-[32px] md:text-5xl max-w-4xl tracking-widest md:mt-20 mt-12 font-gilroy font-black">
                 In reality I am just a humble engineer
               </h3>
               <p className="text-gray-200 md:text-xl text-lg md:mt-3 mt-1">
@@ -136,9 +122,8 @@ export default class HomeGrid extends React.Component {
   };
 
   createGrid = () => {
-    const size = document.body.clientWidth > 800 ? 100 : 50;
-    this.columns = Math.floor(document.body.clientWidth / size);
-    this.rows = Math.floor(document.body.clientHeight / size);
+    this.columns = Math.floor(document.body.clientWidth / this.size);
+    this.rows = Math.floor(document.body.clientHeight / this.size);
     this.wrapper.current.style.setProperty("--columns", this.columns);
     this.wrapper.current.style.setProperty("--rows", this.rows);
     console.log(this.columns);
